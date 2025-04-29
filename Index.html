@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapatos para Todos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; text-align: center; padding: 1rem; }
+        .carousel { position: relative; overflow: hidden; width: 100%; height: 300px; }
+        .carousel img { width: 100%; height: 300px; object-fit: cover; display: none; }
+        .carousel img.active { display: block; }
+        .section { padding: 2rem; text-align: center; }
+        .modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .modelo { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; }
+        .contacto a { display: inline-block; margin: 10px; padding: 10px 20px; background-color: #25d366; color: white; text-decoration: none; border-radius: 5px; }
+        .contacto a.email { background-color: #0072c6; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Zapatos para Todos</h1>
+</header>
+
+<section class="carousel" id="carousel">
+    <img src="https://via.placeholder.com/1200x300?text=Zapato+1" class="active" alt="Zapato 1">
+    <img src="https://via.placeholder.com/1200x300?text=Zapato+2" alt="Zapato 2">
+    <img src="https://via.placeholder.com/1200x300?text=Zapato+3" alt="Zapato 3">
+</section>
+
+<section class="section">
+    <h2>Modelos</h2>
+    <div class="modelos">
+        <div class="modelo">
+            <h3>Modelo Clásico</h3>
+            <p>Zapato elegante para toda ocasión.</p>
+        </div>
+        <div class="modelo">
+            <h3>Modelo Deportivo</h3>
+            <p>Comodidad y estilo para el deporte.</p>
+        </div>
+        <div class="modelo">
+            <h3>Modelo Casual</h3>
+            <p>Perfecto para el día a día.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section contacto">
+    <h2>Contáctanos</h2>
+    <a href="mailto:ventas@zapatosparatodos.com" class="email">Enviar correo</a>
+    <a href="https://wa.me/5211234567890" target="_blank">WhatsApp</a>
+</section>
+
+<script>
+    const images = document.querySelectorAll('#carousel img');
+    let current = 0;
+    
+    setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }, 3000); // Cambia cada 3 segundos
+</script>
+
+</body>
+</html>
